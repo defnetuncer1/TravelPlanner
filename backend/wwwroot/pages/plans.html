@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Personal Travel Planner </title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel ="stylesheet" href = "../css/style.css">
+
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-sm custom-navbar">
+        <div class="container-fluid">
+            <ul class="navbar-nav nav-tabs custom-nav">
+                
+                <li class="nav-item">
+                    <a class ="nav-link" href="home.html">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="places.html">Destinations</a>
+                </li>
+                <li class ="nav-item">
+                    <a class="nav-link active" href="plans.html">Plans</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="account.html">Login/Register</a>
+                </li>
+               
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container-fluid mt-5">
+        <h2 class="text-center mb-4 display-3">My Travel Plans</h2>
+        <div class="form-box">
+            <h4 class="text-center mb-3">Create New Plan</h4>
+            <form id="planForm">
+                <div class="p-3">
+                    <label for="planName" class="form-label">Plan Name:</label>
+                    <input type="text" class="form-control" id="planName">
+                </div>
+                <div class="p-3">
+                    <label for="destination" class="form-label">Destination:</label>
+                    <input type="text" class="form-control" id="planDestination">
+                </div>
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <label for="startDate" class="form-label">Start Date:</label>
+                        <input type="date" class="form-control" id="startDate">
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label for="endDate" class="form-label">End Date:</label>
+                    <input type="date" class="form-control" id="endDate">
+                    </div>
+                </div>
+                <button type="submit" class="custom-button">Create Plan</button>
+            </form>
+        </div>
+        <h3 class="text-center mt-5 mb-4">Saved Plans</h3>
+        <div class="row" id="plansContainer">
+        </div>
+    </div>
+
+    <footer class="custom-footer">
+    <div class="container-fluid text-center">
+        <h5>Personal Travel Planner</h5>
+        <p>Discover places, create travel plans and organize your trips easily.</p>
+        <p class="mb-0">2026 Personal Travel Planner | SENG 216 Web Programming Project</p>
+    </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../js/script.js"></script>
+</body>
+</html>
