@@ -60,6 +60,12 @@ if (loginForm) {
         const password = document.getElementById("loginPassword").value;
         const loginMessage = document.getElementById("loginMessage");
 
+        if (email.trim() === "" || password.trim() === "") {
+        loginMessage.textContent = "Please fill in both email and password.";
+        loginMessage.style.color = "red";
+        return;
+        }
+
         fetch("../api/users.php", {
             method: "POST",
             headers: {
@@ -83,6 +89,8 @@ if (loginForm) {
                 localStorage.setItem("loggedInUser", data.fullName);
                 localStorage.setItem("loggedInEmail", data.email);
 
+                document.cookie = "loggedInUser=" + data.fullName + "; path=/";
+
                 window.location.href = "plans.html";
             } else {
                 loginMessage.style.color = "red";
@@ -104,6 +112,16 @@ if (registerForm) {
         const confirmPassword = document.getElementById("confirmPassword").value;
         const registerMessage = document.getElementById("registerMessage");
 
+        if (
+            fullName.trim() === "" ||
+            email.trim() === "" ||
+            password.trim() === "" ||
+            confirmPassword.trim() === ""
+        ) {
+            registerMessage.textContent = "Please fill in all registration fields.";
+            registerMessage.style.color = "red";
+            return;
+        }
         if (password !== confirmPassword) {
             registerMessage.textContent = "Passwords do not match.";
             registerMessage.style.color = "red";
@@ -533,6 +551,9 @@ if (logoutButton) {
     logoutButton.addEventListener("click", function() {
         localStorage.removeItem("loggedInUser");
         localStorage.removeItem("loggedInEmail");
+
+        document.cookie = "loggedInUser=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+
         window.location.href = "account.html";
     });
 }
