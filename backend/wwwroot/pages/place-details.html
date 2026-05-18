@@ -33,23 +33,30 @@
         </div>
     </nav>
 
-
-        <div class="banner-container">
-            <img src="../images/london.jpeg" class="banner-image" alt="Sky Garden">
-        </div>
-        <div class="container-fluid p-3">
-            <h1 class="p-3 display-3">Sky Garden</h1>
-            <p class="text-muted">London, United Kingdom</p>
-            <div class="p-3">
-                <span class="badge bg-primary p-2">Attraction</span>
-                <span class="badge bg-success p-2">Free Entry</span>
-                <span class="badge bg-dark p-2">4.6 / 5</span>
+            <div id="placeDetailsContainer" ></div>
+<div class="modal fade" id="addToPlanModal" tabindex="-1" aria-labelledby="addToPlanModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="addToPlanModalLabel">Add Place to Plan</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-            <p>Sky Garden is a popular indoor garden and viewpoint in London. 
-                It is a good spot for visitors who want city views, modern architecture, and a relaxing place to visit.</p>
-            <p>Recommended visit duration: 1-2 hours</p>
-            <button class="custom-button" data-bs-toggle="modal" data-bs-target="#addToPlanModal">Add to Plan</button>
+            <div class="modal-body">
+                <label for="planSelect" class="form-label">Choose one of your plans:</label>
+                <select class="form-select" id="planSelect">
+                    <option selected disabled>Select a plan</option>
+                </select>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                <button type="button" class="custom-button" data-bs-dismiss="modal" id="confirmAddToPlan">
+                    Add to Selected Plan
+                </button>
+            </div>
         </div>
+    </div>
+</div>
+
    
 <footer class="custom-footer">
     <div class="container-fluid text-center">

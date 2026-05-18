@@ -75,20 +75,24 @@ app.MapStaticAssets();
 app.MapRazorPages()
    .WithStaticAssets();
 
-app.MapGet("/api/places", async(TravelPlannerContext context) =>
+app.MapGet("../api/places.php", async(TravelPlannerContext context) =>
 {
     return await context.Places.ToListAsync();
 });
 
+app.MapGet("../api/plans.php", async(TravelPlannerContext context) =>
+{
+    return await context.Plans.ToListAsync();
+});
 
-app.MapPost("/api/plans", async([FromBody]Plan plan, TravelPlannerContext context) =>
+app.MapPost("../api/plans.php", async([FromBody]Plan plan, TravelPlannerContext context) =>
 {
     context.Plans.Add(plan);
     await context.SaveChangesAsync();
     return Results.Ok(plan);
 });
 
-app.MapDelete("/api/plans/{id}", async(int id, TravelPlannerContext context) =>
+app.MapDelete("../api/plans.php/{id}", async(int id, TravelPlannerContext context) =>
 {
     var plan = await context.Plans.FindAsync(id);
     if (plan == null)
@@ -99,4 +103,20 @@ app.MapDelete("/api/plans/{id}", async(int id, TravelPlannerContext context) =>
     await context.SaveChangesAsync();
     return Results.Ok();
 });
+
+app.MapPut("../api/plans.php/{id}", async(int id,[FromBody] Plan updatedPlan, TravelPlannerContext context) =>
+{
+    var plan =await context.Plans.FindAsync(id);
+    if (plan == null)
+    {
+        return Results.NotFound();
+    }
+    plan.PlanName=updatedPlan.PlanName;
+    plan.DestinationCity = updatedPlan.DestinationCity;
+    plan.StartDate = updatedPlan.StartDate;
+    plan.EndDate = updatedPlan.EndDate;
+    await context.SaveChangesAsync();
+    return Results.Ok(plan);
+});
+
 app.Run();

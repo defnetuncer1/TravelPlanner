@@ -77,75 +77,7 @@
 
             <h3 class="text-center mb-4">Popular Recommendations</h3>
                 <p id="resultMessage" class="text-center text-muted">Showing popular recommendations.</p>
-                <div class="row" id="placesContainer">
-                <div class="col-md-4 mb-4 place-card-wrapper"
-                    data-destination="London"
-                    data-category="attraction"
-                    data-keywords="terrace garden viewpoint london">
-    
-                    <div class="card place-card">
-                        <img src="../images/london.jpeg" class="card-img-top" alt="London">
-
-                        <div class="card-body">
-                            <h5 class="card-title">Sky Garden</h5>
-                            <p class="card-text">A popular viewpoint and indoor garden in London.</p>
-
-                            <p><strong>Category: </strong> Attraction</p>
-                            <p><strong>City: </strong> London</p>
-
-                            <button class="custom-button" data-bs-toggle="modal" data-bs-target="#addToPlanModal">
-                                Add to Plan
-                            </button>
-                            <a href="place-details.html" class="btn btn-outline-secondary mt-3">View Details</a>
-
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 mb-4 place-card-wrapper"
-                    data-destination="Paris";
-                    data-category="museum";
-                    data-keywords="museum art history louvre paris">
-
-                    <div class="card place-card">
-                        <img src="../images/louvre.jpeg" class="card-img-top" alt="Paris">
-                        <div class="card-body">
-                            <h5 class="card-title">Louvre Museum</h5>
-                            <p class="card-text">A world-famous museum for art, history and culture lovers.</p>
-                            
-                            <p><strong>Category: </strong> Museum</p>
-                            <p><strong>City: </strong> Paris</p>
-
-                            <button class="custom-button" data-bs-toggle="modal" data-bs-target="#addToPlanModal">
-                                Add to Plan
-                            </button>
-                            <a href="place-details.html" class="btn btn-outline-secondary mt-3">View Details</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 mb-4 place-card-wrapper"
-                    data-destination="Tokyo";
-                    data-category="attraction";
-                    data-keywords="popular street city tokyo">
-                    <div class="card place-card">
-                        <img src="../images/tokyo.jpeg" class="card-img-top" alt="Tokyo">
-
-                        <div class="card-body">
-                            <h5 class="card-title">Shibuya Crossing</h5>
-                            <p class="card-text">One of Tokyo's most iconic and energetic city spots.</p>
-                        
-                            <p><strong>Category: </strong> Attraction</p>
-                            <p><strong>City: </strong> Tokyo</p>
-
-                            <button class="custom-button" data-bs-toggle="modal" data-bs-target="#addToPlanModal">
-                                Add to Plan
-                            </button>
-                            <a href="place-details.html" class="btn btn-outline-secondary mt-3">View Details</a>
-                        </div>
-                    </div>
-                </div>
-
-
-            </div>
+                <div class="row" id="placesContainer"></div>
 
 <div class="modal fade" id="addToPlanModal" tabindex="-1" aria-labelledby="addToPlanModalLabel" aria-hidden="true">
     <div class="modal-dialog">
@@ -158,9 +90,7 @@
                 <label for="planSelect" class="form-label">Choose one of your plans:</label>
                 <select class="form-select" id="planSelect">
                     <option selected disabled>Select a plan</option>
-                    <option>London Plan</option>
-                    <option>Paris Plan</option>
-                    <option>Summer Europe Trip</option>
+
                 </select>
             </div>
             <div class="modal-footer">

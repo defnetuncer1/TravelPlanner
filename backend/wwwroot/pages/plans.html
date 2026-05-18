@@ -33,6 +33,14 @@
         </div>
     </nav>
 
+    <div class="d-flex justify-content-end align-items-center gap-3 mb-3 me-3 mt-3">
+    <span id="welcomeMessage" class="fw-semibold"></span>
+
+    <button id="logoutButton" class="btn btn-outline-dark btn-sm">
+        Logout
+    </button>
+</div>
+
     <div class="container-fluid mt-5">
         <h2 class="text-center mb-4 display-3">My Travel Plans</h2>
         <div class="form-box">
@@ -61,6 +69,37 @@
         </div>
         <h3 class="text-center mt-5 mb-4">Saved Plans</h3>
         <div class="row" id="plansContainer">
+        </div>
+    </div>
+
+    <div class="modal fade " id="editPlanModal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <form id="editPlanForm">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Edit Plan</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                    </div>
+                    <div class="modal-body">
+                        <input type="hidden" id="editPlanId">
+
+                        <label class="form-label">Plan Name:</label>
+                        <input type="text" class="form-control mb-3" id="editPlanName">
+
+                        <label class="form-label">Destination:</label>
+                        <input type="text" class="form-control mb-3" id="editPlanDestination">
+
+                        <label class="form-label">Start Date:</label>
+                        <input type="date" class="form-control mb-3" id="editStartDate">
+
+                        <label class="form-label">End Date:</label>
+                        <input type="date" class="form-control mb-3" id="editEndDate">
+                    </div>
+                    <div class="modal-footer">
+                        <button type="submit" class="btn btn-primary">Update Plan</button>
+                    </div>
+                </form>
+            </div>
         </div>
     </div>
 
